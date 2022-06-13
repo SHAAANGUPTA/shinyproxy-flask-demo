@@ -12,7 +12,9 @@ RUN apt-get update && \
 COPY app /opt/app
 
 EXPOSE 8080
+COPY main.py /root/content/main.py
+COPY static/ /root/content/static/
+COPY templates/ /root/content/templates/
 
 WORKDIR /opt/app
-
 CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:8080"]
