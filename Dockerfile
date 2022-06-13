@@ -17,4 +17,4 @@ COPY app/static/ /root/content/app/static/
 COPY app/templates/ /root/content/app/templates/
 
 WORKDIR /opt/app
-CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:8080"]
+CMD ["python3", "/root/content/main.py" , "gunicorn", "main:app", "--bind", "0.0.0.0:8080"]
