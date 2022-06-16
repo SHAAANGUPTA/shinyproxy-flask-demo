@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__,
             template_folder='/opt/app/templates',
@@ -6,11 +6,8 @@ app = Flask(__name__,
 
 @app.route('/')
 def home(): 
+    print("helloooooo",request.base_url  )
     return render_template('home.html')
-
-@app.route('/heartbeat')
-def heartbeat():
-    return True
 
 @app.route('/about')
 def about():
