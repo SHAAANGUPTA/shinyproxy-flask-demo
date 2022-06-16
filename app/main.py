@@ -5,12 +5,13 @@ app = Flask(__name__,
             static_folder='/opt/app/static')
 
 @app.route('/')
-def home():
-    return render_template('home.html')
+def home(): 
+    base_url= request.base_url
+    print("url==",base_url)
+    return render_template('home.html', base_url = base_url)
 
 @app.route('/about')
 def about():
-    print(url_for('shaan'))
     return render_template('about.html')
 
 if __name__ == '__main__':
