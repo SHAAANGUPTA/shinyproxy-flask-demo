@@ -6,13 +6,13 @@ app = Flask(__name__,
 
 @app.route('/')
 def home(): 
-    base_url= request.url
-    print("url==",base_url)
-    return render_template('home.html', base_url=base_url)
+    return render_template('home.html')
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    base_url= request.url
+    print("url==",base_url)
+    return render_template('about.html', base_url=base_url)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int("8050"), debug=True) 
