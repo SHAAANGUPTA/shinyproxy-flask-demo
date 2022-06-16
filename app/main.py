@@ -8,7 +8,7 @@ app = Flask(__name__,
 def home(): 
     base_url= request.base_url
     print("url==",base_url)
-    return render_template('home.html', base_url = base_url)
+    return render_template('home.html', base_url=base_url)
 
 @app.route('/about')
 def about():
