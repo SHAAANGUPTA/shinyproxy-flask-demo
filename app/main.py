@@ -10,7 +10,7 @@ def home():
 
 @app.route('/about')
 def about():
-    base_url= request.url
+    base_url= request
     print("url==",base_url)
     return render_template('about.html', base_url=base_url)
 
